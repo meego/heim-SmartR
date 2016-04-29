@@ -160,9 +160,6 @@ window.smartRApp.factory('rServeService', [
             var promise = $q(function(resolve, reject) {
                 runRequest.then(
                     function(response) {
-                        if (!response.data) {
-                            console.error('Unexpected response:', response);
-                        }
                         taskData.executionId = response.data.executionId;
                         _checkStatus(taskData.executionId, resolve, reject);
                     },
